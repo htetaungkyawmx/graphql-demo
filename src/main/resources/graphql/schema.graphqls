@@ -1,0 +1,32 @@
+type Mutation{
+    createBook(title:String,rating:InputRating,firstName:String,lastName:String): BookInfoDTO
+}
+
+type Query{
+    allBooks:[BookInfoDTO]
+}
+
+
+type BookInfoDTO{
+    id:ID
+    title:String
+    rating:Rating
+    author:Author
+}
+
+type Rating{
+    rating:String
+    star:String
+}
+
+input InputRating{
+    rating:String
+    star:String
+}
+
+type Author{
+    id:ID
+    firstName:String
+    lastName:String
+    books:[BookInfoDTO]
+}
